@@ -1,0 +1,28 @@
+{
+  "navList": [
+    {
+      "name": "指南",
+      "packages": [
+        {
+          "name": "介绍",
+          "path": "introduce"
+        }
+      ]
+    },
+    {
+      "name": "通用组件",
+      "packages": [
+        {
+          "name": "CButton",
+          "path": "CButton"
+        }
+      ]
+    },
+    {
+      "name": "业务组件",
+      "packages": [
+      ]
+    }
+   
+  ]
+}

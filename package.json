@@ -1,0 +1,95 @@
+{
+  "name": "v3-ts-mobile-ui",
+  "version": "0.0.1",
+  "description": "Vue3.0组件库",
+  "private": "true",
+  "main": "lib/index.umd.js",
+  "module": "lib/index.es.js",
+  "style": "lib/style.css",
+  "typings": "lib/index.d.ts",
+  "files": [
+    "lib",
+    "README.md",
+    "package.json"
+  ],
+  "scripts": {
+    "start": "concurrently \"npm run start:vite\" \"npm run watch:css\"",
+    "start:ui": "vite --config vite.config.mobile.ts",
+    "start:vite": "vite --open --force",
+    "build": "vite build --config vite.config.mobile.ts && node config/config.copy.types.js && node config/config.copy.themes.js && vite build",
+    "watch:css": "gulp --gulpfile gulpfile.js",
+    "tsc":"tsc -w"
+  },
+  "dependencies": {
+    "highlight.js": "^10.7.2",
+    "lodash": "^4.17.21",
+    "vite-plugin-md": "^0.6.3",
+    "vue": "^3.2.6",
+    "vue-router": "^4.0.4"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.168",
+    "@types/node": "^14.14.37",
+    "@typescript-eslint/eslint-plugin": "^4.22.0",
+    "@typescript-eslint/parser": "^4.22.0",
+    "@vitejs/plugin-vue": "^1.2.1",
+    "@vitejs/plugin-vue-jsx": "^1.1.3",
+    "@vue/compiler-sfc": "^3.0.5",
+    "@vue/eslint-config-prettier": "^6.0.0",
+    "@vue/eslint-config-typescript": "^7.0.0",
+    "@vue/test-utils": "^2.0.0-rc.6",
+    "autoprefixer": "^10.2.5",
+    "concurrently": "^6.0.1",
+    "eslint": "^7.24.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-vue": "^7.9.0",
+    "eslint-config-prettier": "^8.3.0",
+    "fs-extra": "^9.1.0",
+    "glob": "^7.1.6",
+    "gulp": "^4.0.2",
+    "gulp-postcss": "^9.0.0",
+    "gulp-sass": "^4.1.0",
+    "gulp-watch": "^5.0.1",
+    "husky": "^6.0.0",
+    "lint-staged": "^10.5.4",
+    "postcss-aspect-ratio-mini": "^1.1.0",
+    "postcss-px-to-viewport": "^1.1.1",
+    "postcss-write-svg": "^3.0.1",
+    "prettier": "^2.2.1",
+    "sass": "^1.32.8",
+    "style-loader": "^0.23.1",
+    "stylelint": "^13.13.1",
+    "stylelint-config-prettier": "^9.0.3",
+    "stylelint-config-standard": "^22.0.0",
+    "stylelint-order": "^5.0.0",
+    "stylelint-scss": "^3.21.0",
+    "typescript": "^4.1.3",
+    "vite": "^2.1.5",
+    "vue-tsc": "^0.0.15"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run test && lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "lint-staged": {
+    "*.{js,ts}": [
+      "eslint --fix",
+      "eslint --max-warnings 0"
+    ],
+    "*.vue": [
+      "eslint --fix",
+      "prettier --write",
+      "stylelint --fix",
+      "eslint --max-warnings 0"
+    ],
+    "*.{scss,html}": [
+      "stylelint --fix",
+      "prettier --write"
+    ],
+    "*.md": [
+      "prettier --write"
+    ]
+  }
+}

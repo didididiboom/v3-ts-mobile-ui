@@ -1,0 +1,18 @@
+{
+    "src_dir": "./dist/",
+    "bucket": "front-assets",
+    "zone": "nb",
+    "ignore_dir": false,
+    "key_prefix": "v3-ts-mobile-ui/",
+    "overwrite": true,
+    "check_exists": false,
+    "check_hash": true,
+    "check_size": false,
+    "skip_file_prefixes": ".git,bin",
+    "skip_path_prefixes": "hello/,node_modules/,temp/,Html",
+    "skip_fixed_strings": ".idea,.svn,.git,node_modules,.vscode,grunt,package.json,quploader,sftp",
+    "skip_suffixes": ".DS_Store,.exe,.md,.yml,.log,.less,.map",
+    "rescan_local": true,
+    "log_file": "upload.log",
+    "log_level": "info"
+ }

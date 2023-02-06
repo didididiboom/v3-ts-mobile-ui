@@ -1,6 +1,13 @@
 <template>
   <div class="demo-wrp">
-    <div v-if="frame" class="nav">{{ name }}</div>
+    <div v-if="frame" class="nav">
+      <div class="nav-bar__left" @click="goBack">
+        <img src="../../../assets/images/back.png" alt="" srcset="">
+      </div>
+      <div class="nav-bar__title">
+        {{ name }}
+      </div>
+    </div>
     <div :class="frame ? 'router-view frame' : 'router-view'">
       <router-view v-slot="{ Component }">
         <transition>
@@ -13,31 +20,27 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent, onMounted, ref } from 'vue';
-import { useRoute, onBeforeRouteUpdate } from 'vue-router';
+<script setup lang="ts">
+import { onMounted, ref } from 'vue';
+import { useRoute, useRouter, onBeforeRouteUpdate } from 'vue-router';
 
-export default defineComponent({
-  name: 'Layout',
-  setup: () => {
-    const name = ref('');
+const name = ref('');
+const frame = ref(window.self.name === 'demo-content' ? true : false);
+const route = useRoute();
+const router = useRouter();
 
-    onBeforeRouteUpdate((to) => {
-      name.value = String(to.name);
-    });
-
-    const route = useRoute();
-    onMounted(() => {
-      name.value = String(route.name);
-    });
-
-    const frame = ref(window.self.name === 'demo-content' ? true : false);
-    return {
-      frame,
-      name
-    };
-  }
+onBeforeRouteUpdate((to) => {
+  name.value = String(to.name);
 });
+
+onMounted(() => {
+  name.value = String(route.name);
+});
+
+const goBack = () => {
+  router.go(-1)
+}
+
 </script>
 
 <style lang="scss" scoped>
@@ -84,6 +87,49 @@ export default defineComponent({
     font-weight: bold;
     background: #fff;
     box-shadow: 0 4px 10px 0 rgb(0 0 0 / 7%);
+
+
+    .nav-bar__left,
+    .nav-bar__right {
+      img {
+        width: 20px;
+        opacity: 0.8;
+      }
+
+      &:active {
+        opacity: 0.5;
+      }
+    }
+
+    .nav-bar__left {
+      position: absolute;
+      top: 0;
+      left: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%
+    }
+
+    .nav-bar__right {
+      position: absolute;
+      top: 0;
+      right: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+    }
+
+    .nav-bar__title {
+      margin: 0 auto;
+      max-width: 50%;
+      height: 50px;
+      font-size: 16px;
+      text-align: center;
+      color: #34495e;
+      line-height: 50px;
+    }
   }
 }
 </style>

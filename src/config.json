@@ -6,6 +6,26 @@
         {
           "name": "介绍",
           "path": "introduce"
+        },
+        {
+          "name": "安装",
+          "path": "install",
+          "componentPath": "install.md"
+        },
+        {
+          "name": "快速上手",
+          "path": "use",
+          "componentPath": "use.md"
+        },
+        {
+          "name": "最佳实践",
+          "path": "utils",
+          "componentPath": "utils.md"
+        },
+        {
+          "name": "工具库",
+          "path": "useUtils",
+          "componentPath": "useUtils.md"
         }
       ]
     },
@@ -21,6 +41,10 @@
     {
       "name": "业务组件",
       "packages": [
+        {
+          "name": "CDownload",
+          "path": "CDownload"
+        }
       ]
     }
    

@@ -2,9 +2,6 @@ const { resolve } = require('path');
 const fs = require('fs-extra');
 const { sync } = require('glob');
 
-/**
- *mkdir  types
- */
 const components = sync(
   resolve(__dirname + '/../src/packages/**/index.?(ts|vue|tsx)'),
   { nodir: false }

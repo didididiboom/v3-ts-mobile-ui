@@ -1,0 +1,237 @@
+.home-page {
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  width: 100vw;
+  min-width: 1200px;
+  height: 100vh;
+  min-height: 460px;
+  background: #fff;
+  box-sizing: border-box;
+}
+  
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  
+  
+  to {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+  
+@keyframes slash-1 {
+  from {
+    transform: rotate(90deg);
+  ;
+  }
+  
+  to {
+    transform: rotate(10deg);
+  }
+}
+  
+@keyframes slash-2 {
+  from {
+    transform: rotate(90deg);
+  ;
+  }
+  
+  to {
+    transform: rotate(20deg);
+  }
+}
+  
+@keyframes slash-3 {
+  from {
+    transform: rotate(90deg);
+  ;
+  }
+  
+  to {
+    transform: rotate(30deg);
+  }
+}
+  
+@keyframes slash-4 {
+  from {
+    transform: rotate(90deg);
+  ;
+  }
+  
+  to {
+    transform: rotate(40deg);
+  }
+}
+  
+@keyframes slash-5 {
+  from {
+    transform: rotate(90deg);
+  ;
+  }
+  
+  to {
+    transform: rotate(50deg);
+  }
+}
+  
+.slash-box {
+  position: absolute;
+  top: -130%;
+  right: 52%;
+  bottom: -70%;
+  width: 30px;
+  box-shadow: -20px 0 20px #ccc;
+  transition: box-shadow 0.5s;
+  transform-origin: bottom right;
+}
+  
+.box-1 {
+  animation: slash-1 .75s forwards;
+}
+  
+.box-2 {
+  animation: slash-2 .75s forwards;
+}
+  
+.box-3 {
+  animation: slash-3 .75s forwards;
+}
+  
+.box-4 {
+  animation: slash-4 .75s forwards;
+}
+  
+.box-5 {
+  animation: slash-5 .75s forwards;
+}
+  
+.profile-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 10vw;
+  height: 100vh;
+  
+  .container-box {
+    width: 35vw;
+    min-width: 500px;
+  
+    .button-group {
+      margin-top: 25px;
+      color: #fff;
+    }
+  
+    .block-button-content {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo-box {
+      z-index: 2;
+      margin-right: 25px;
+      width: 90px;
+      height: 90px;
+      flex-shrink: 0;
+    }
+  
+    .common-button {
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      height: 52px;
+      font-size: 18px;
+      border-radius: 4px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.14);
+      transition: all .25s;
+      animation: fade-in .75s forwards;
+    }
+
+    .gitlab-button {
+      background-color: #f60;
+    }
+  
+    .primary-button {
+      background-color: #2a8cff;
+    }
+  
+    .margin-left {
+      margin-left: 10px;
+    }
+  
+    @media all and (max-width: 2560px) {
+      .description-container {
+        display: flex;
+        margin-bottom: 40px;
+      }
+  
+      .base-title {
+        margin-top: 21px;
+        word-break: keep-all;
+        font-size: 110px;
+        font-weight: 500;
+        line-height: 72px;
+        animation: fade-in .75s forwards;
+      }
+  
+      .base-description {
+        margin-bottom: 43px;
+        padding-left: 4px;
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 38px;
+        letter-spacing: 1px;
+        animation: fade-in .75s forwards;
+      }
+  
+      .logo-box {
+        z-index: 2;
+        margin-right: 30px;
+        width: 120px;
+        height: 120px;
+        flex-shrink: 0;
+        animation: fade-in .75s forwards;
+      }
+    }
+  
+    @media all and (max-width: 1920px) {
+  
+      .description-container {
+        display: flex;
+        margin-bottom: 35px;
+      }
+  
+      .base-title {
+        margin-top: 8px;
+        font-size: 45px;
+        word-break: keep-all;
+        font-weight: 500;
+        line-height: 72px;
+        animation: fade-in .75s forwards;
+      }
+  
+      .base-description {
+        margin-bottom: 45px;
+        padding-left: 4px;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 28px;
+        letter-spacing: 1px;
+        animation: fade-in .75s forwards;
+      }
+  
+      .logo-box {
+        z-index: 2;
+        margin-right: 25px;
+        width: 90px;
+        height: 90px;
+        flex-shrink: 0;
+        animation: fade-in .75s forwards;
+      }
+    }
+  }
+}

@@ -2,11 +2,7 @@ const { resolve } = require("path");
 const fs = require('fs-extra');
 const { sync } = require("glob");
 
-/**
- * copy  scss
- */
 try {
-
     fs.copy(
         resolve(__dirname + '/../src/style.scss'),
         resolve(__dirname + '/../lib/style.scss')

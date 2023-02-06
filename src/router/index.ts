@@ -1,4 +1,5 @@
 import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router';
+import { navList } from '../config.json';
 
 const pagesRouter: Array<RouteRecordRaw> = [];
 const routes: Array<RouteRecordRaw> = [
@@ -35,6 +36,20 @@ for (const module in pages) {
     name
   });
 }
+
+navList.forEach((item) => {
+  if (item.name && item.packages.length > 0) {
+    item.packages.forEach((el) => {
+      if(el.componentPath) {
+        pagesRouter.push({
+          name: el.name,
+          path: '/' + el.path,
+          component: () => import('../docs/' + el.componentPath),
+        });
+      }
+    })
+  }
+});
 
 const router = createRouter({
   history: createWebHashHistory(),

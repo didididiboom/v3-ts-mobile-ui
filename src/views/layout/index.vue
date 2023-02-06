@@ -39,7 +39,7 @@ const style = {
 
 .doc-main {
   overflow-y: auto;
-  padding: 30px 415px 30px 30px;
+  padding: 30px 415px 70px 30px;
   height: 100vh;
   flex-grow: 1;
   background: #f7f8fa;

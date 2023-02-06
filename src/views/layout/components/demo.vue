@@ -8,7 +8,7 @@
 import { defineComponent, ref, onMounted } from 'vue';
 import { onBeforeRouteUpdate, useRoute } from 'vue-router';
 
-const filter = ['intro', 'icon'];
+const filter = ['introduce', 'install', 'use', 'utils'];
 
 export default defineComponent({
   name: 'Demo',
@@ -17,7 +17,7 @@ export default defineComponent({
     const path = ref('');
     const demo = import.meta.env.DEV
       ? 'http://localhost:3000/mobile.html'
-      : 'https://foneqinrf.github.io/fone-vvmui/mobile.html';
+      : 'https://foneqinrf.github.io/mobile.html';
 
     const filters = (name: string) => {
       if (filter.includes(name)) {
